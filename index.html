@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong - Funcional</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: white;
+            font-family: 'Courier New', Courier, monospace; /* Fonte de fliperama */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .game-container {
+            position: relative; /* Para podermos posicionar o placar em cima do canvas */
+        }
+
+        canvas {
+            background-color: #1a1a1a;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+            border: 2px solid #fff;
+        }
+
+        /* Estilo do Placar */
+        #placar {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            font-size: 40px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.5); /* Meio transparente para não atrapalhar a visão */
+            pointer-events: none; /* Para não bugar caso clique em cima */
+        }
+
+        .instructions {
+            margin-top: 15px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Jogo Pong</h2>
+    
+    <div class="game-container">
+        <!-- PLACAR AQUI -->
+        <div id="placar">
+            <span id="pontosP1">0</span>
+            <span id="pontosP2">0</span>
+        </div>
+
+        <canvas id="canvas" width="600" height="600"></canvas>
+    </div>
+
+    <div class="instructions">
+        <p><strong>Jogador 1 (Esquerda):</strong> Teclas W e S | <strong>Jogador 2 (Direita):</strong> Setas Cima e Baixo</p>
+    </div>
+
+    <script src="m3.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
